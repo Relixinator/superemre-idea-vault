@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SuperEmre Idea Vault</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+  <meta name="theme-color" content="#0b6e4f">
+</head>
+<body>
+  <header>
+    <h1>SuperEmre Idea Vault</h1>
+    <div class="actions">
+      <button id="btn-add">Nieuw idee</button>
+      <button id="btn-export">Exporteren</button>
+      <label class="import-label">
+        Importeren
+        <input type="file" id="file-import" accept="application/json">
+      </label>
+      <button id="btn-install" class="hidden">Installeren</button>
+    </div>
+  </header>
+
+  <section id="topbar">
+    <input type="search" id="search" placeholder="Zoeken in titel, tags, notities…">
+    <select id="filter-status">
+      <option value="">Status: alles</option>
+      <option>Backlog</option>
+      <option>Bezig</option>
+      <option>Gepauzeerd</option>
+      <option>Klaar</option>
+    </select>
+    <select id="filter-priority">
+      <option value="">Prioriteit: alles</option>
+      <option>Laag</option>
+      <option>Midden</option>
+      <option>Hoog</option>
+      <option>Kritiek</option>
+    </select>
+    <button id="btn-quick">Snel vastleggen</button>
+  </section>
+
+  <main>
+    <aside id="list">
+      <ul id="idea-list"></ul>
+    </aside>
+
+    <section id="detail">
+      <form id="idea-form">
+        <div class="grid">
+          <label>Titel
+            <input type="text" id="title" required>
+          </label>
+          <label>Categorie
+            <input type="text" id="category" placeholder="Bouw / Content / App / Finance …">
+          </label>
+          <label>Status
+            <select id="status">
+              <option>Backlog</option>
+              <option>Bezig</option>
+              <option>Gepauzeerd</option>
+              <option>Klaar</option>
+            </select>
+          </label>
+          <label>Prioriteit
+            <select id="priority">
+              <option>Laag</option>
+              <option>Midden</option>
+              <option selected>Hoog</option>
+              <option>Kritiek</option>
+            </select>
+          </label>
+          <label>Deadline
+            <input type="date" id="due">
+          </label>
+          <label>Volgende actie
+            <input type="text" id="next_action" placeholder="Concrete eerstvolgende stap">
+          </label>
+        </div>
+
+        <label>Tags (komma-gescheiden)
+          <input type="text" id="tags" placeholder="wko, excel, youtube">
+        </label>
+
+        <label>Beschrijving
+          <textarea id="description" rows="6" placeholder="Wat is het idee, voor wie, waarom nu?"></textarea>
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" id="btn-save">Opslaan</button>
+          <button type="button" id="btn-delete" class="danger">Verwijderen</button>
+          <button type="button" id="btn-log">Voortgang toevoegen</button>
+          <button type="button" id="btn-codex">Codex-prompt kopiëren</button>
+        </div>
+      </form>
+
+      <section id="logs">
+        <h3>Voortgang / Notities</h3>
+        <ul id="log-list"></ul>
+      </section>
+    </section>
+  </main>
+
+  <dialog id="quick-dialog">
+    <form method="dialog">
+      <h3>Snel vastleggen</h3>
+      <label>Titel
+        <input type="text" id="quick-title" required>
+      </label>
+      <label>Korte notitie
+        <textarea id="quick-note" rows="4"></textarea>
+      </label>
+      <menu>
+        <button id="quick-cancel">Annuleren</button>
+        <button id="quick-save" value="default">Opslaan</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <dialog id="log-dialog">
+    <form method="dialog">
+      <h3>Voortgang toevoegen</h3>
+      <textarea id="log-text" rows="5" placeholder="Wat heb je gedaan / besloten?"></textarea>
+      <menu>
+        <button id="log-cancel">Annuleren</button>
+        <button id="log-save" value="default">Toevoegen</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <footer>
+    <small>100% lokaal. Data staat alleen in je browser. Exporteer voor back-up.</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

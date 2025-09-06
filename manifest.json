@@ -1,0 +1,9 @@
+{
+  "name": "SuperEmre Idea Vault",
+  "short_name": "IdeaVault",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0b6e4f",
+  "icons": []
+}
