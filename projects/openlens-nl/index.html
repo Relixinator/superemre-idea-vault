@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="OpenLens NL: ontdek openbare Nederlandse webcams en officiële politie-coldcases met bronvermelding op één kaart.">
+<title>OpenLens NL | Openbare camera's & dossiers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
+:root{--bg:#090f1b;--panel:#111c2c;--panel2:#162337;--line:#273750;--ink:#edf5ff;--muted:#95a9c1;--cyan:#56cce0;--lime:#bded84;--orange:#ffce88}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 75% 0%,#1a3450 0,transparent 38%),var(--bg);color:var(--ink);font:15px/1.55 system-ui,Segoe UI,sans-serif}
+a{color:inherit}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.wrap{max-width:1260px;margin:auto;padding:0 24px}.top{border-bottom:1px solid var(--line);background:#0b1420d9;position:sticky;top:0;z-index:5;backdrop-filter:blur(18px)}
+.nav{display:flex;align-items:center;gap:23px;min-height:70px}.logo{font-weight:850;font-size:20px;letter-spacing:-.7px;text-decoration:none;white-space:nowrap}.logo span{color:var(--cyan)}.links{display:flex;align-items:center;gap:18px;margin-left:auto}.links a{font-size:13px;color:var(--muted);text-decoration:none}.links a:hover{color:var(--ink)}
+.chip{font-size:11px;font-weight:750;letter-spacing:1px;border-radius:100px;border:1px solid #325a67;color:var(--cyan);padding:5px 10px;text-transform:uppercase}
+.hero{padding:65px 0 30px;display:grid;grid-template-columns:1.5fr .8fr;align-items:center;gap:44px}
+.eyebrow{font-size:12px;font-weight:800;color:var(--cyan);text-transform:uppercase;letter-spacing:2px}h1{font-size:clamp(42px,5vw,72px);line-height:1.05;letter-spacing:-3px;margin:18px 0 23px}
+h1 em{font-style:normal;color:var(--cyan)}.intro{color:#b5c6d7;font-size:17px;max-width:730px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:29px}
+.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;padding:11px 17px;background:var(--cyan);color:#0b1b23;border:0;border-radius:9px;text-decoration:none;font-weight:750;font-size:13px}
+.btn.secondary{background:#1d2b3f;color:#e3edf8;border:1px solid #334158}.btn:hover{filter:brightness(1.12)}
+.brief{padding:26px;border:1px solid #314962;border-radius:18px;background:linear-gradient(145deg,#182f48,#111d2e);box-shadow:0 20px 60px #0003}
+.brief h3{font-size:16px;margin:0 0 17px}.brief p{color:var(--muted);font-size:13px}.statrow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;border-block:1px solid var(--line);padding:18px 0}.metric b{font-size:29px;line-height:1.1;display:block;letter-spacing:-1px}.metric span{color:var(--muted);font-size:11px}
+.note{border:1px solid #36526b;border-radius:12px;padding:13px 15px;background:#112338;color:#bfd0e3;font-size:12px;margin:18px 0 0}
+section{padding:44px 0}h2{font-size:31px;letter-spacing:-1px;margin:0 0 10px}.sub{color:var(--muted);margin:0 0 25px;max-width:860px}
+.controls{display:flex;gap:10px;flex-wrap:wrap;padding:14px;background:#112034;border:1px solid var(--line);border-radius:15px;margin-bottom:20px}
+.controls input,.controls select{background:#0b1625;border:1px solid #324158;color:var(--ink);border-radius:8px;padding:12px;min-width:130px}
+.controls input{flex:1;min-width:200px}.controls button{background:var(--panel2);border:1px solid var(--line);color:var(--ink);padding:9px 15px;border-radius:8px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.item{background:linear-gradient(160deg,#17253a,#111b2b);border:1px solid var(--line);border-radius:15px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,border-color .2s}
+.item:hover{transform:translateY(-2px);border-color:#488aa0}.visual{height:116px;position:relative;background:linear-gradient(130deg,#1c445b,#263e50 48%,#27304b);overflow:hidden}
+.visual:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 13px,#ffffff08 14px),linear-gradient(120deg,transparent 60%,#ffffff10 63%,transparent 65%)}.visual:after{content:"◉";color:#92d7de;position:absolute;right:25px;top:4px;font-size:80px;opacity:.16}
+.visual.beach{background:linear-gradient(140deg,#143f52,#244e65 48%,#897457)}.visual.harbor{background:linear-gradient(140deg,#173c59,#24505a 55%,#2e6076)}.visual.nature{background:linear-gradient(140deg,#174e4c,#2a5340,#344433)}
+.visual small{position:absolute;top:13px;left:15px;border:1px solid #ffffff50;background:#0c1822b0;padding:3px 9px;border-radius:99px;font-size:10px;letter-spacing:.7px;font-weight:700}
+.content{padding:17px;display:flex;flex:1;flex-direction:column;gap:8px}.content h3{font-size:17px;margin:0;line-height:1.25}.content p{font-size:12px;margin:0;color:var(--muted)}.content .bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:8px}
+.source{font-size:11px;color:#8ab7c8}.open{color:var(--cyan);font-size:12px;font-weight:750;text-decoration:none;white-space:nowrap}
+.empty{text-align:center;padding:30px;color:var(--muted);grid-column:1/-1}
+.catalog{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:20px}.catalog a{color:var(--cyan);font-size:13px}
+#map{height:520px;border:1px solid #34516d;border-radius:15px;overflow:hidden;background:linear-gradient(110deg,#112a38,#213a45)}
+#map-shell{display:none}#map-box{padding:22px;background:var(--panel);border:1px solid var(--line);border-radius:16px}.maptext{font-size:13px;color:var(--muted);margin-top:12px}
+.cases{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.case{border:1px solid var(--line);background:var(--panel);padding:22px;border-radius:14px;display:flex;flex-direction:column;gap:10px}
+.case-top{display:flex;justify-content:space-between;gap:15px;align-items:start}.case h3{font-size:19px;margin:0}.reward{color:var(--lime);font-weight:850;white-space:nowrap}.case p{color:var(--muted);font-size:13px;margin:0}.case .open{margin-top:auto}
+.calc{background:linear-gradient(130deg,#192f40,#101d2e);border:1px solid #385169;border-radius:18px;padding:26px;display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.calc strong{display:block;font-size:42px;letter-spacing:-1px;color:var(--lime)}.calc label{display:block;font-size:13px;margin:14px 0;color:var(--muted)}.calc select{display:block;width:100%;margin-top:7px;background:#0e1b2a;border:1px solid #36475c;border-radius:8px;color:white;padding:12px}
+footer{border-top:1px solid var(--line);padding:35px 0 55px;color:var(--muted);font-size:12px}footer a{color:var(--cyan)}
+.hidden{display:none!important}.leaflet-popup-content{font:13px system-ui, sans-serif}.leaflet-popup-content a{color:#006a83}
+@media(max-width:940px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.links{gap:9px}.brief{max-width:700px}}
+@media(max-width:650px){.wrap{padding:0 16px}.nav{flex-wrap:wrap;gap:8px;padding:12px 0}.links{margin:0;width:100%;justify-content:space-between}.links a{font-size:12px}section{padding:33px 0}.grid,.cases,.calc{grid-template-columns:1fr}.hero{padding:45px 0 14px}h1{letter-spacing:-2px}.statrow{gap:5px}.metric b{font-size:23px}.visual{height:100px}#map{height:420px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap nav"><a href="#" class="logo">◎ Open<span>Lens</span> NL</a><span class="chip">Publieke bronnen</span><nav class="links"><a href="#camera">Camera's</a><a href="#kaart">Kaart</a><a href="#dossiers">Dossiers</a><a href="#business">Verdienmodel</a></nav></div></header>
+<main>
+<div class="wrap hero">
+ <div><div class="eyebrow">Nederland · Open source informatie</div><h1>Heel Nederland.<br><em>Één overzicht.</em></h1><p class="intro">Ontdek bewust openbaar uitgezonden webcams en officieel gepubliceerde coldcases. Zoek per locatie, bekijk de kaart en ga altijd rechtstreeks naar de originele bron.</p><div class="hero-actions"><a class="btn" href="#camera">Bekijk openbare camera's ↗</a><a class="btn secondary" href="#dossiers">Open de dossiers →</a></div></div>
+ <aside class="brief"><h3>OpenLens / bronnenmonitor</h3><div class="statrow"><div class="metric"><b id="cameraTotal">0</b><span>Bronpagina's</span></div><div class="metric"><b>210</b><span>Politie coldcases*</span></div><div class="metric"><b>600+</b><span>Extern vermeld*</span></div></div><p>Cameraoverzicht is een gecureerde startcatalogus. Geen eigen CCTV-toegang en geen garantie dat iedere externe stream op dit moment afspeelt.</p><div class="note">● Bronlinks, geen ongeautoriseerde cameratoegang. De kaart gebruikt globale plaatscoördinaten, geen exacte cameraopstellingen.</div></aside>
+</div>
+<section id="camera"><div class="wrap"><div class="eyebrow">01 / Publieke webcams</div><h2>Verken de cameracatalogus</h2><p class="sub">Geselecteerde publieke camera-aanbieders, verspreid door Nederland. Beelden openen op de originele aanbieder. Geen downloads, verborgen streams of tracking van personen.</p>
+ <div class="controls"><input id="search" placeholder="Zoek stad of cameralocatie..." aria-label="Zoek camera"><select id="type" aria-label="Cameracategorie"><option value="">Alle categorieën</option><option value="stad">Stad & plein</option><option value="strand">Strand & kust</option><option value="haven">Haven & water</option><option value="natuur">Natuur & overig</option></select><select id="provider" aria-label="Aanbieder"><option value="">Alle aanbieders</option><option>SkylineWebcams</option><option>WebCam.NL</option><option>EarthCam</option></select><button id="clear">Wis filters</button></div>
+ <p class="sub" id="counter" aria-live="polite"></p><div class="grid" id="cameraGrid"></div>
+ <div class="catalog"><span class="chip">Grotere externe catalogi</span><a href="https://www.skylinewebcams.com/en/webcam/netherlands.html" target="_blank" rel="noopener noreferrer">SkylineWebcams →</a><a href="https://webcam.nl/faq/" target="_blank" rel="noopener noreferrer">WebCam.NL →</a><a href="https://argosatlas.com/en/cameras/netherlands/" target="_blank" rel="noopener noreferrer">ARGOS ATLAS →</a><a href="https://www.windy.com/" target="_blank" rel="noopener noreferrer">Windy →</a></div>
+ </div></section>
+<section id="kaart"><div class="wrap"><div class="eyebrow">02 / Geografisch zoeken</div><h2>Nederland op de kaart</h2><p class="sub">Bij benadering geplaatste locatiepunten. Voor privacy wordt de externe kaartdienst pas geladen wanneer je op de knop drukt.</p><div id="map-box"><button class="btn" id="loadMap">Laad interactieve kaart</button><div id="map-shell"><div id="map" role="region" aria-label="Kaart met publieke webcamlocaties"></div><p class="maptext">Kaarttegels: © OpenStreetMap-bijdragers. Locatiemarkeringen zijn circa-stadspunten en tonen geen precieze cameraposities.</p></div></div></div></section>
+<section id="dossiers"><div class="wrap"><div class="eyebrow">03 / Officiële opsporingszaken</div><h2>Onderzoek de dossiers</h2><p class="sub">Gepubliceerde politiezaken, zorgvuldig gescheiden van livecamera's. Geen suggestie dat camerabeelden een verband hebben met deze zaken. Beloningen kunnen wijzigen; controleer altijd de actuele politiepagina.</p>
+<div class="cases" id="caseGrid"></div><div class="catalog"><a class="btn secondary" href="https://www.politie.nl/gezocht/cold-cases" target="_blank" rel="noopener noreferrer">Alle coldcases bij de politie ↗</a><a href="https://www.politie.nl/algemeen/transparantie.html" target="_blank" rel="noopener noreferrer">Officiële open-data-API →</a></div></div></section>
+<section id="business"><div class="wrap"><div class="eyebrow">04 / Verdienmodel</div><h2>Wat kan de website opleveren?</h2><p class="sub">Rekenvoorbeeld met een aangenomen advertentie-RPM. Dit zijn geen gegarandeerde Nederlandse markttarieven. Het aantal paginaweergaven, advertentievullingsgraad, toestemming en bezoekersmix bepalen de echte opbrengst.</p>
+<div class="calc"><div><label>Paginaweergaven per maand<select id="views"><option value="10000">10.000</option><option value="50000">50.000</option><option value="100000" selected>100.000</option><option value="250000">250.000</option><option value="500000">500.000</option><option value="1000000">1.000.000</option></select></label><label>Veronderstelde opbrengst per 1.000 paginaweergaven<select id="rpm"><option value="1">€ 1 (laag)</option><option value="2.5" selected>€ 2,50 (voorbeeld)</option><option value="5">€ 5 (hoog scenario)</option></select></label><small style="color:var(--muted)">Formule: paginaweergaven / 1.000 × RPM. Exclusief hosting, transactiekosten, BTW en belastingen.</small></div><div><span class="eyebrow">Illustratieve bruto omzet</span><strong id="result">€ 250</strong><span style="color:var(--muted)">per maand via displayadvertenties</span><p class="note">Aanvullend potentieel: sponsoring van locatiepagina's, samenwerkingen met webcams/eigenaren en zakelijke data-afspraken, alleen met passende rechten. Verdien niet aan tips over slachtoffers of personen.</p></div></div></div></section>
+</main>
+<footer><div class="wrap"><b style="color:#e8f1f7">OpenLens NL</b><p>Onafhankelijk initiatief. Geen onderdeel van of goedgekeurd door de politie. Geen opgeslagen camerabeelden, geen identificatie van personen en geen live statusgarantie. Respecteer auteursrecht, portretrecht en privacy.</p><p>Catalogus samengesteld op 19 oktober 2026. Gegevens en externe streams kunnen wijzigen. <a href="https://github.com/Relixinator/superemre-idea-vault/tree/main/projects/openlens-nl" target="_blank" rel="noopener noreferrer">Broncode op GitHub</a> · <a href="https://github.com/Relixinator/superemre-idea-vault/issues/new?title=OpenLens%3A%20camera%20link%20defect" target="_blank" rel="noopener noreferrer">Kapotte link melden</a></p></div></footer>
+<script>
+const cameras=[
+["Amsterdam: Dam","Amsterdam","Noord-Holland","stad",52.373,4.894,"https://www.skylinewebcams.com/en/webcam/netherlands/north-holland/amsterdam/amsterdam-dam-square.html","SkylineWebcams"],
+["Amsterdam: Damrak","Amsterdam","Noord-Holland","stad",52.375,4.895,"https://www.skylinewebcams.com/en/webcam/netherlands/north-holland/amsterdam/amsterdam-damrak-street.html","SkylineWebcams"],
+["Amsterdam: stadscentrum","Amsterdam","Noord-Holland","stad",52.371,4.90,"https://www.skylinewebcams.com/en/webcam/netherlands/north-holland/amsterdam/city-center.html","SkylineWebcams"],
+["Amsterdam: Sixhaven","Amsterdam","Noord-Holland","haven",52.382,4.904,"https://webcam.nl/amsterdam/sixhaven/","WebCam.NL"],
+["Amsterdam: Hotel Nes","Amsterdam","Noord-Holland","stad",52.368,4.9,"https://www.earthcam.com/world/netherlands/amsterdam/","EarthCam"],
+["Rotterdam: Erasmusbrug","Rotterdam","Zuid-Holland","stad",51.91,4.49,"https://www.skylinewebcams.com/en/webcam/netherlands/south-holland/rotterdam/rotterdam-erasmus-bridge.html","SkylineWebcams"],
+["Rotterdam: Markthal","Rotterdam","Zuid-Holland","stad",51.92,4.48,"https://www.skylinewebcams.com/en/webcam/netherlands/south-holland/rotterdam/markthal.html","SkylineWebcams"],
+["Groningen: Grote Markt","Groningen","Groningen","stad",53.219,6.567,"https://www.skylinewebcams.com/en/webcam/netherlands/groningen/groningen/groningen-grote-markt.html","SkylineWebcams"],
+["Sneek: De Kolk","Sneek","Friesland","haven",53.032,5.66,"https://www.skylinewebcams.com/en/webcam/netherlands/friesland/sneek/sneek.html","SkylineWebcams"],
+["Zandvoort: strand","Zandvoort","Noord-Holland","strand",52.372,4.525,"https://www.skylinewebcams.com/en/webcam/netherlands/north-holland/zandvoort/zandvoort-beach.html","SkylineWebcams"],
+["Scheveningen: boulevard","Den Haag","Zuid-Holland","strand",52.109,4.272,"https://www.skylinewebcams.com/en/webcam/netherlands/south-holland/the-hague/scheveningen-boulevard.html","SkylineWebcams"],
+["Egmond aan Zee: Pompplein","Egmond aan Zee","Noord-Holland","stad",52.618,4.623,"https://www.skylinewebcams.com/en/webcam/netherlands/north-holland/egmond-aan-zee/egmond-aan-zee-pompplein-centre-square.html","SkylineWebcams"],
+["Vrouwenpolder: strand","Vrouwenpolder","Zeeland","strand",51.576,3.621,"https://www.skylinewebcams.com/en/webcam/netherlands/zeeland/veere/vrouwenpolder.html","SkylineWebcams"],
+["Holwert: veerterminal","Holwert","Friesland","haven",53.364,5.899,"https://www.skylinewebcams.com/en/webcam/netherlands/friesland/holwert/ferry-terminal.html","SkylineWebcams"],
+["Zandvoort: boulevard","Zandvoort","Noord-Holland","strand",52.374,4.525,"https://www.skylinewebcams.com/en/webcam/netherlands/north-holland/zandvoort/boulevard.html","SkylineWebcams"],
+["Sittard: markt","Sittard","Limburg","stad",51.0,5.87,"https://www.skylinewebcams.com/en/webcam/netherlands/limburg/sittard/sittard-town-square.html","SkylineWebcams"],
+["Vlissingen: strandzicht","Vlissingen","Zeeland","strand",51.443,3.573,"https://www.skylinewebcams.com/en/webcam/netherlands/zeeland/vlissingen/vlissingen.html","SkylineWebcams"],
+["Leeuwarden: Wilhelminaplein","Leeuwarden","Friesland","stad",53.201,5.796,"https://www.skylinewebcams.com/en/webcam/netherlands/friesland/leeuwarden/wilhelminaplein.html","SkylineWebcams"],
+["Lemmer: jachthaven","Lemmer","Friesland","haven",52.846,5.71,"https://www.skylinewebcams.com/en/webcam/netherlands/friesland/lemmer/lemmer-dock.html","SkylineWebcams"],
+["Amsterdam: Centraal Station","Amsterdam","Noord-Holland","stad",52.379,4.9,"https://www.skylinewebcams.com/en/webcam/netherlands/north-holland/amsterdam/central-station.html","SkylineWebcams"],
+["Den Haag: Kijkduin","Den Haag","Zuid-Holland","strand",52.069,4.224,"https://www.skylinewebcams.com/en/webcam/netherlands/south-holland/the-hague/kijkduin.html","SkylineWebcams"],
+["Hoek van Holland: strand","Hoek van Holland","Zuid-Holland","strand",51.978,4.13,"https://www.skylinewebcams.com/en/webcam/netherlands/south-holland/hoek-van-holland/hoek-van-holland-beach.html","SkylineWebcams"],
+["Volendam: haven","Volendam","Noord-Holland","haven",52.494,5.07,"https://www.skylinewebcams.com/en/webcam/netherlands/north-holland/volendam/marina.html","SkylineWebcams"],
+["Den Helder: haven","Den Helder","Noord-Holland","haven",52.956,4.765,"https://www.skylinewebcams.com/en/webcam/netherlands/north-holland/den-helder/den-helder.html","SkylineWebcams"],
+["Roermond: panorama","Roermond","Limburg","stad",51.192,5.99,"https://www.skylinewebcams.com/en/webcam/netherlands/limburg/roermond/roermond.html","SkylineWebcams"],
+["IJsselstein: ooievaarsnest","IJsselstein","Utrecht","natuur",52.02,5.04,"https://www.skylinewebcams.com/en/webcam/netherlands/north-holland/ijsselstein/stork-nest.html","SkylineWebcams"],
+["Oudeschild: haven Texel","Oudeschild","Noord-Holland","haven",53.039,4.849,"https://www.skylinewebcams.com/en/webcam/netherlands/north-holland/oudeschild/oudeschild.html","SkylineWebcams"],
+["Elburg: Vischmarkt","Elburg","Gelderland","stad",52.448,5.836,"https://webcam.nl/elburg/vischmarkt/","WebCam.NL"],
+["Petten: strand & reddingsbrigade","Petten","Noord-Holland","strand",52.766,4.658,"https://webcam.nl/petten/","WebCam.NL"],
+["Vlieland: strand Badhuys","Vlieland","Friesland","strand",53.297,5.067,"https://webcam.nl/vlieland/","WebCam.NL"],
+["Ameland: strand Sjoerd","Ameland","Friesland","strand",53.453,5.766,"https://webcam.nl/ameland/","WebCam.NL"],
+["Ameland: veerhaven","Ameland","Friesland","haven",53.448,5.78,"https://webcam.nl/ameland/veerboot/","WebCam.NL"],
+["Ameland: VVV Nes","Ameland","Friesland","stad",53.446,5.778,"https://webcam.nl/ameland/vvv/","WebCam.NL"],
+["Castricum: strand Deining","Castricum","Noord-Holland","strand",52.552,4.604,"https://webcam.nl/castricum/deining/","WebCam.NL"],
+["Workum: It Soal","Workum","Friesland","haven",52.977,5.448,"https://webcam.nl/camping/","WebCam.NL"],
+["Eindhoven: Markt (archiefpagina)","Eindhoven","Noord-Brabant","stad",51.439,5.48,"https://www.skylinewebcams.com/en/webcam/netherlands/north-brabant/eindhoven/eindhoven.html","SkylineWebcams"]
+];
+const cases=[
+["Mariska Klompenhouwer","Rotterdam · 2001","€ 25.000","Onopgeloste moordzaak met door de politie vrijgegeven bewakingsbeelden.","https://www.politie.nl/gezocht/opsporingsbericht/2012/januari/07-maartje-mariska-klompenhouwer"],
+["Lex van Cittert","Lelystad · 1999 / vondst 2023","€ 15.000","Na jaren werden stoffelijke resten gevonden. De politie zoekt informatie over wat er is gebeurd.","https://www.politie.nl/gezocht/opsporingsbericht/2023/juni/03-cold-case-lex-van-cittert"],
+["Louis van Dam","Den Haag · 1992","€ 30.000","Man doodgeschoten in eigen garage. Lees de actuele stand van het politieonderzoek.","https://www.politie.nl/gezocht/opsporingsbericht/2020/januari/06-louis-van-dam"],
+["Corné Baelemans","Breda · 2002","","Dodelijk schietincident waarvan aanleiding en toedracht lange tijd onduidelijk bleven.","https://www.politie.nl/gezocht/opsporingsbericht/2022/december/coldcase---schietincident-corne-baelemans"],
+["Sjaak Gerwig","Nieuwegein · 1995","","Onopgeloste moord op een 18-jarige. Het dossier bevat de officiële oproep aan getuigen.","https://www.politie.nl/gezocht/opsporingsbericht/2016/januari/03-cck-utrecht-sjaak-gerwig"],
+["Sidney Lute","Assendelft · vermist sinds 2016","","Vermissingszaak met openbare beschrijvingen, foto's en een verouderingsfoto.","https://www.politie.nl/gezocht/opsporingsbericht/2019/januari/04-sidney-lute"]
+];
+const $=id=>document.getElementById(id), safe=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function filtered(){const q=$('search').value.toLocaleLowerCase('nl-NL').trim(),cat=$('type').value,provider=$('provider').value;return cameras.filter(c=>(!q||(c[0]+' '+c[1]+' '+c[2]).toLocaleLowerCase('nl-NL').includes(q))&&(!cat||c[3]===cat)&&(!provider||c[7]===provider));}
+function draw(){const rows=filtered();$('counter').textContent=rows.length+' van '+cameras.length+' bronpagina’s · Afspelen en actuele status alleen bij aanbieder te controleren.';
+$('cameraGrid').innerHTML=rows.length?rows.map((c,i)=>'<article class="item"><div class="visual '+(c[3]==='strand'?'beach':c[3]==='haven'?'harbor':c[3]==='natuur'?'nature':'')+'"><small>BRONLINK · '+safe(c[3].toUpperCase())+'</small></div><div class="content"><h3>'+safe(c[0])+'</h3><p>'+safe(c[1])+' · '+safe(c[2])+'</p><div class="bottom"><span class="source">'+safe(c[7])+'</span><a class="open" href="'+safe(c[6])+'" target="_blank" rel="noopener noreferrer" aria-label="Open webcam '+safe(c[0])+' bij bron">Bekijk bron ↗</a></div></div></article>').join(''):'<p class="empty">Geen camera’s gevonden. Verander je filters.</p>';
+if(window.openLensMarkers){window.openLensMarkers.clearLayers();rows.forEach((c)=>{const m=L.circleMarker([c[4],c[5]],{radius:7,color:'#56cce0',fillColor:'#56cce0',fillOpacity:.85,weight:2});m.bindPopup('<b>'+safe(c[0])+'</b><br>'+safe(c[1])+'<br><a href="'+safe(c[6])+'" target="_blank" rel="noopener noreferrer">Open de bron ↗</a>');m.addTo(window.openLensMarkers)})}}
+$('cameraTotal').textContent=cameras.length;$('search').addEventListener('input',draw);$('type').addEventListener('change',draw);$('provider').addEventListener('change',draw);$('clear').addEventListener('click',()=>{$('search').value='';$('type').value='';$('provider').value='';draw()});
+$('caseGrid').innerHTML=cases.map(c=>'<article class="case"><div class="case-top"><h3>'+safe(c[0])+'</h3>'+(c[2]?'<span class="reward">'+safe(c[2])+'*</span>':'')+'</div><span class="source">'+safe(c[1])+'</span><p>'+safe(c[3])+'</p><a class="open" href="'+safe(c[4])+'" target="_blank" rel="noopener noreferrer">Open officieel dossier ↗</a></article>').join('');
+function calc(){let v=Number($('views').value),r=Number($('rpm').value);$('result').textContent=(v*r/1000).toLocaleString('nl-NL',{style:'currency',currency:'EUR',maximumFractionDigits:0})}$('views').addEventListener('change',calc);$('rpm').addEventListener('change',calc);
+$('loadMap').addEventListener('click',()=>{const css=document.createElement('link');css.rel='stylesheet';css.href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';document.head.appendChild(css);const s=document.createElement('script');s.src='https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';s.onload=()=>{$('map-shell').style.display='block';$('loadMap').style.display='none';const map=L.map('map').setView([52.2,5.35],7);L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap-bijdragers',maxZoom:17}).addTo(map);window.openLensMarkers=L.layerGroup().addTo(map);draw();setTimeout(()=>map.invalidateSize(),80)};s.onerror=()=>{$('loadMap').textContent='Kaartladen mislukt · probeer opnieuw'};document.head.appendChild(s)});
+draw();calc();
+</script>
+</body></html>
